@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Kumbh Sans', sans-serif;
+}
+
+:root {
+    --text-color-blue: hsl(238, 29%, 16%);
+    --text-color-red: hsl(14, 88%, 65%);
+    --text-color-grayish-blue: hsl(240, 6%, 50%);
+
+    --bg-gradient-violet: hsl(273, 75%, 66%);
+    --bg-gradient-blue: hsl(240, 73%, 65%);
+
+    --divider-color: hsl(240, 5%, 91%);
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: radial-gradient(at top, var(--bg-gradient-violet), var(--bg-gradient-blue));
+}
+
+.card {
+    background: white;
+    display: flex;
+    padding: 2rem;
+    border-radius: 1.5rem;
+    gap: 2rem;
+    position: relative;
+    background-image: url('./images/bg-pattern-desktop.svg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position-x: -600px;
+    background-position-y: -200px;
+}
+
+.card-left {
+    flex-basis: 50%;
+    position: relative;
+}
+
+.card-right {
+    flex-basis: 50%;
+}
+
+.card .card-left > .card-left-image {
+    background-image: url('./images/illustration-woman-online-desktop.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    left: -20%;
+    top: 30%;
+}
+
+.card .card-left > .card-left-item {
+    background-image: url('./images/illustration-box-desktop.svg');
+    background-size: cover;
+    position: absolute;
+    height: 100%;
+    left: -60%;
+    width: 100%;
+    scale: .3;
+    top: 15%;
+    overflow: visible !important;
+}
+
+.card .card-right > h1 {
+    padding-block: 2rem;
+}
+
+.card .card-right .card-right-question {
+    border-bottom: 1px solid var(--divider-color);
+    padding-block: 1rem;
+}
+
+.question {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: .5rem;
+}
+
+.question > img {
+    --rotation: 0;
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+    transform: rotate(calc(var(--rotation) * 1deg));
+    transition: .5s ease-in;
+}
+
+.question-title {
+    color: var(--text-color-blue);
+}
+
+.question-title:hover {
+    color: var(--text-color-red);
+    cursor: pointer;
+}
+
+.question-answer {
+    color: var(--text-color-grayish-blue);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
